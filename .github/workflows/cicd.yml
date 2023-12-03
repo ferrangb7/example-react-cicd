@@ -44,7 +44,7 @@ jobs:
 
   deploy:
     name: Deploy
-    needs: build
+    needs: test-build
     runs-on: ubuntu-22.04
     if: github.event_name == 'push' && github.ref == 'refs/heads/main'
 
