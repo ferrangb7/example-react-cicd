@@ -3,6 +3,8 @@ import { newReliclogs } from "../api/newReliclogs";
 
 export const Banner = () => {
 
+    // run tests
+
     const navigate = useNavigate();
 
     const handleClick = () => {
