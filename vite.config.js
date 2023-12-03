@@ -13,5 +13,5 @@ export default defineConfig({
     strictPort: true
   },
   assetsInclude: ['png'],
-  // base: process.env.NODE_ENV === 'production' ? '/GeoDiscover/' : '/',
+  base: process.env.VITE_APP_PUBLIC_URL || '/',
 })

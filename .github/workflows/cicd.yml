@@ -30,6 +30,8 @@ jobs:
 
     - name: Build
       run: npm run build
+      env:
+        VITE_APP_PUBLIC_URL: /example-react-cicd/
 
     - name: Uploading build files
       if: github.event_name == 'push' && github.ref == 'refs/heads/main'
