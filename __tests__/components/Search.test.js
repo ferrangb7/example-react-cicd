@@ -22,3 +22,7 @@ test('Search box renders correctly', () => {
 test('when a user types in the search bar, the search bar contains text', async () => {
     expect("REPLACE_ME").toBe("REPLACE_ME");
 });
+
+//TODO: write a test to check that the Error component appears if no data 
+//is found from the call to the API. You will need another mock.
+//THIS IS THE HARDEST -- try the getCountryByName.test.js first!
