@@ -5,6 +5,6 @@
 import renderer from 'react-test-renderer';
 import { Search } from '../../src/components/Search';
 
-test('Banner renders correctly', () => {
+test('Search box renders correctly', () => {
     expect("REPLACE_ME").toBe("REPLACE_ME");
 });
