@@ -2,7 +2,9 @@
 
 //TODO: write a snapshot test that captures the Search.js component
 
-import renderer from 'react-test-renderer';
+import renderer from 'react-test-renderer'; //you will need this for the snapshot test
+import { cleanup, fireEvent, render } from '@testing-library/react'; //this is for the DOM testing
+import { screen } from '@testing-library/dom';//this is for the DOM testing
 import { Search } from '../../src/components/Search';
 
 test('Search box renders correctly', () => {
