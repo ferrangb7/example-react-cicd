@@ -6,7 +6,7 @@ import { BrowserRouter } from 'react-router-dom'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <BrowserRouter basename={import.meta.env.DEV ? '/' : '/react-vite-gh-pages/'}>
+    <BrowserRouter basename={import.meta.env.DEV ? '/' : '/example-react-cicd/'}>
       <App />
     </BrowserRouter>
   </React.StrictMode>,
