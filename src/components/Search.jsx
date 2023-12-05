@@ -41,7 +41,7 @@ export const Search = () => {
 
                         />
                         <button className="btn btn-outline-primary mt-2">
-                            search
+                            Search
                         </button>
                     </form>
                 </div>
