@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Search box renders correctly 1`] = `
+<div
+  className="row search"
+>
+  <div
+    className="col-3"
+  >
+    <h4>
+      Searching
+    </h4>
+    <hr />
+    <form
+      aria-label="form"
+      onSubmit={[Function]}
+    >
+      <input
+        autoComplete="off"
+        className="form-control"
+        onChange={[Function]}
+        placeholder="Search a country"
+        type="text"
+        value=""
+      />
+      <button
+        className="btn btn-outline-primary mt-2"
+      >
+        search
+      </button>
+    </form>
+  </div>
+  <div
+    className="col-9"
+  >
+    <h4>
+      Results
+    </h4>
+    <hr />
+  </div>
+</div>
+`;
