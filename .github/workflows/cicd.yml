@@ -11,6 +11,8 @@ on:
 
 jobs:
   test-build:
+    permissions:
+      contents: write
     name: Test & Build
     runs-on: ubuntu-22.04
     steps:
@@ -24,7 +26,15 @@ jobs:
       run: npm ci
     - name: Run tests
       run: npm run test
-       
+    - name: Run build
+      run: npm run build
+        env: 
+          VITE_APP_PUBLIC_URL: /example-react-cicd/
+   - name: Deploying to gh-pages
+      uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
 
     # TODO: Run build here
     # TODO: Deploy to github pages

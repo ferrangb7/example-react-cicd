@@ -36,7 +36,7 @@
     "react-test-renderer": "^18.2.0",
     "vite": "^4.1.0"
   },
-  "homepage": "https://ferrangb7.github.io/example-react-cicd/",
+  "homepage": "https://anggifit.github.io/example-react-cicd/",
   "jest": {
     "testEnvironment": "jsdom",
     "moduleNameMapper": {
