@@ -59,3 +59,5 @@ export const Search = () => {
         </>
     )
 }
+
+module.exports = Search;

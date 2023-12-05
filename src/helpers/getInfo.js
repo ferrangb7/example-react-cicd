@@ -6,4 +6,6 @@ export const getInfo = (object) => {
     } else {
         return 'none'
     }
-}
+};
+
+module.exports = getInfo;
