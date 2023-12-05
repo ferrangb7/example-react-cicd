@@ -14,7 +14,6 @@ test('test name is joining', () => {
     expect(getInfo(ok)).toBe( "Spain, EUR, this is the name, this is the name");
 });
 getInfo()
-//test git_push
 //TODO: write a test if no data is passed to the function (returns "none")
 
 test('checking none', () => {

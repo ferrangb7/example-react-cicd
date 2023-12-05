@@ -5,7 +5,6 @@ const getInfo = (object) => {
     } else {
         return 'none'
     }
-    //test
 }
 
 module.exports = getInfo;
