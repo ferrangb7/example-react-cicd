@@ -25,7 +25,7 @@ jobs:
     - name: Run tests
       run: npm run test
        
-    # TODO: Run tests here
+
     # TODO: Run build here
     # TODO: Deploy to github pages
 
