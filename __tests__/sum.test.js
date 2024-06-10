@@ -13,8 +13,9 @@ test('adds 1 and 2 to equal 3', () => {
 A simple test is made up of a description and an expectation. The expectation above makes logical
 sense (1 plus 2 usually equals 3!) so we don't want to change it.
 
-EXERCISE:
-1. Run this test to see it fail.
+TODO: Beginner exercises below
+
+1. Run this test to see it fail (have a look at the package.json for the scripts!)
 2. Identify why it has failed.
 3. Go into the code (have a look at the import statement to find the file) and fix the component.
 4. Run the test again.
