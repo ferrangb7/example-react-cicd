@@ -1,8 +1,5 @@
-//This example is from https://jestjs.io/docs/getting-started
-
-//This import is required to test the component we want.
-const sum = require('../src/sum');
-
+//This example is from https://jestjs.io/docs/getting-started -- I've just changed the import method for React
+import { sum } from '../src/sum';
 
 test('adds 1 and 2 to equal 3', () => {
     expect(sum(1, 2)).toBe(3);
