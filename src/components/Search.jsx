@@ -3,6 +3,7 @@ import { CountryCard } from "./CountryCard";
 import { getCountryByName } from "../api/getCountryByName";
 import { Error } from "./Error";
 import { newReliclogs } from "../api/newReliclogs";
+import CheckboxWithLabel from "./CheckboxWithLabel";
 
 export const Search = () => {
 
@@ -54,6 +55,8 @@ export const Search = () => {
                             <CountryCard key={ cty.population } cty={ cty } />
                         )) : <Error />
                     }
+
+                    <CheckboxWithLabel labelOn="on" labelOff="off" />
                 </div>
             </div>
         </>

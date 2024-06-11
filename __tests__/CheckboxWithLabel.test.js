@@ -1,3 +1,5 @@
+
+
 import {cleanup, fireEvent, render} from '@testing-library/react';
 import CheckboxWithLabel from '../src/components/CheckboxWithLabel';
 
@@ -5,7 +7,7 @@ import CheckboxWithLabel from '../src/components/CheckboxWithLabel';
 // unmount and cleanup DOM after the test is finished.
 afterEach(cleanup);
 
-test('CheckboxWithLabel changes the label after each click', () => {
+test('CheckboxWithLabel changes the label after each click, () => {
   // Arrange: render checkbox and store reference
   const {getByLabelText} = render(
     <CheckboxWithLabel labelOn="on" labelOff="off" />,
