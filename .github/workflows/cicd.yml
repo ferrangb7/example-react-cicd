@@ -16,50 +16,47 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v2
+
     - name: Set up Node.js
       uses: actions/setup-node@v2
       with:
         node-version: 16.x
+
     - name: Install dependencies
       run: npm ci
-       
-    # TODO: Run tests here
-    # TODO: Run build here
-    # TODO: Deploy to github pages
 
-## TIP
-## to conditionally run a job or a step use the if key.
-# if: github.event_name == 'push' && github.ref == 'refs/heads/main' 
+    - name: Run tests
+      run: npm test
 
-## TIP 
-## deploy steps and permissions for the Github token needed to deploy to gh-pages
-#   permissions:
-#     contents: write
-#   steps:
-#     - name: Deploying to gh-pages
-#       uses: peaceiris/actions-gh-pages@v3
-#       with:
-#         github_token: ${{ secrets.GITHUB_TOKEN }}
-#         publish_dir: ./dist
+    - name: Build
+      run: npm run build
+      env:
+        VITE_APP_PUBLIC_URL: /example-react-cicd/
 
-## TIP: 
-## to deploy to GH pages, set this env var in the build step
-# - name: Build
-#   env:
-#     VITE_APP_PUBLIC_URL: /<repo_name>/
+    - name: Uploading build files
+      # if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+      uses: actions/upload-artifact@v2
+      with:
+        name: artifact
+        path: ./dist
 
-## TIP:
-## If you need to share files between jobs upload them in the repo and download them in the destination job
-# - name: Uploading build files
-#   if: github.event_name == 'push' && github.ref == 'refs/heads/main'
-#   uses: actions/upload-artifact@v2
-#   with:
-#     name: artifact
-#     path: ./dist
+  deploy:
+    name: Deploy
+    needs: test-build
+    runs-on: ubuntu-22.04
+    # if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    permissions:
+      contents: write
 
-# - name: Downloading artifact
-#   if: github.event_name == 'push' && github.ref == 'refs/heads/main'
-#   uses: actions/download-artifact@v2
-#   with:
-#     name: artifact
-#     path: ./dist
+    steps:
+      - name: Downloading artifact
+        uses: actions/download-artifact@v2
+        with:
+          name: artifact
+          path: ./dist
+
+      - name: Deploying to gh-pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
