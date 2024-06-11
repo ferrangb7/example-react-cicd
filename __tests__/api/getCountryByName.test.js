@@ -6,11 +6,11 @@ Use this to help: https://dev.to/zaklaughton/the-only-3-steps-you-need-to-mock-a
 */
 
 import axios from 'axios'
-import { getCountryByName } from "../src/api/getCountryByName";
+import getCountryByName from "../../src/api/getCountryByName";
 
 jest.mock('axios');
 
-test('REPLACE_ME', async () => {
+test('REPLACE_ME', async () => { //async means that we need to wait for something to happen (see await below)
   /* Arrange: mock result of axios.get method.
 
   This should be similar to the object you're getting back from the API.
@@ -18,9 +18,8 @@ test('REPLACE_ME', async () => {
   what it is expecting
   */
   axios.get.mockResolvedValue("REPLACE_ME");
-
   // Act: use the component under test to get countries by name
-  const countries = await getCountryByName('REPLACE_ME');
+  const countries = await getCountryByName('REPLACE_ME'); //await is paired with async, this is where we wait for the result from the API
 
   // Assert: check that the result is the expected one
   expect(countries.length).toEqual(1);
