@@ -16,7 +16,7 @@ afterEach(cleanup);
  You need to render the component: https://testing-library.com/docs/react-testing-library/api/#render
  You'll need to virtually click on the checkbox: https://testing-library.com/docs/dom-testing-library/api-events/#fireevent
 */
-test('REPLACE_ME, () => {
+test('REPLACE_ME', () => {
   // 1. Arrange: render checkbox and store the component as a var, so you can refer to it later.
 
   // 2. Assert: check that checkbox is initially off. You can do something like 'checkbox.checked' to check its value
