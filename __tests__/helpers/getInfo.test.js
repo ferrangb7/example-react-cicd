@@ -1,6 +1,8 @@
 /*
 2. This test suite is building up on the unit tests you learned from sum.test.js
 
+TODO: write a test that checks that the expected value (specify what this is) is returned when we pass null in
+
 1. Have a look at the helper function getInfo and try and understand
 what it is doing. Have a look at where it is used.
 2. Write a description of the test and what you expect it to do (hint, it's
@@ -14,21 +16,18 @@ test('REPLACE_ME', () => {
     expect("REPLACE_ME").toBe("REPLACE_ME");
 });
 
+
+//TODO: write a test that checks that the names are joining correctly
 /*
-TODO: write a test that checks that the names are joining correctly
-
 1. Have a look at the helper function getInfo and try and understand what it is doing.
-Have a look at where it is used. (Spain is a good country to check for this.)
-2. Have a look at what the data from the API looks like by using developer's tools in the browser.
-Go to /search and look up a country. In the Network tab, you can find the response from the API that contains
-the 'Object'.
-3. In the line before the assertion and expectation, write a mock object, something like from the API.
-4. Write an appropriate assertion and expectation, passing in your mock object.
-5. Run the tests. If it fails, try and figure out why.
-6. For extra work, try and write another test for both cases, if there is a 'name' in the object, and one without.
-
-More information can be found here: https://jestjs.io/docs/getting-started
-You might want to have a go at using some of Jest's other matchers: https://jestjs.io/docs/expect
+  Have a look at where it is used. (Spain is a good country to check for this.)
+  2. Have a look at what the data from the API looks like by using developer's tools in the browser.
+  Go to /search and look up a country. In the Network tab, you can find the response from the API that contains
+  the 'Object'.
+  3. In the line before the assertion and expectation, write a mock object, something like from the API.
+  4. Write an appropriate assertion and expectation, passing in your mock object.
+  5. Run the tests. If it fails, try and figure out why.
+  6. For extra work, try and write another test for both cases, if there is a 'name' in the object, and one without.
 */
 
 test('REPLACE_ME', () => {
@@ -36,6 +35,9 @@ test('REPLACE_ME', () => {
 });
 
 /*
+More information can be found here: https://jestjs.io/docs/getting-started
+You might want to have a go at using some of Jest's other matchers: https://jestjs.io/docs/expect
+
 If you are stuck with figuring out the data, here are some tips:
 -  The method is called like so: `getInfo(cty.languages)` and `getInfo(cty.currencies)`
 - The response from the API is large, but there is a key called `languages` and `currencies`.
