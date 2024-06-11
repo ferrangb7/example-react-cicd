@@ -34,7 +34,7 @@ jobs:
         VITE_APP_PUBLIC_URL: /example-react-cicd/
 
     - name: Uploading build files
-      if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+      # if: github.event_name == 'push' && github.ref == 'refs/heads/main'
       uses: actions/upload-artifact@v2
       with:
         name: artifact
@@ -44,7 +44,7 @@ jobs:
     name: Deploy
     needs: test-build
     runs-on: ubuntu-22.04
-    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    # if: github.event_name == 'push' && github.ref == 'refs/heads/main'
     permissions:
       contents: write
 
