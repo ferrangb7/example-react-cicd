@@ -1,5 +1,5 @@
 /*
-TODO: write a test if no data is passed to the function (returns "none")
+2. This test suite is building up on the unit tests you learned from sum.test.js
 
 1. Have a look at the helper function getInfo and try and understand
 what it is doing. Have a look at where it is used.
