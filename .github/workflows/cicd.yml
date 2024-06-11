@@ -7,7 +7,6 @@ on:
   pull_request:
     branches:
       - main
-  workflow_dispatch:
 
 jobs:
   test-build:
@@ -43,7 +42,7 @@ jobs:
   deploy:
     name: Deploy
     needs: test-build
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-latest
     # if: github.event_name == 'push' && github.ref == 'refs/heads/main'
     permissions:
       contents: write
