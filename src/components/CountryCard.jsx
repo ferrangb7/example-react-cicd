@@ -38,8 +38,8 @@ export const CountryCard = ({ cty }) => {
             </div>
             <ul className="list-group list-group-flush">
               <li className="list-group-item">Population: { cty.population }</li>
-              <li className="list-group-item">Language: { getInfo(cty.languages) }</li>
-              <li className="list-group-item">Currenci: { getInfo(cty.currencies) }</li>
+              <li className="list-group-item">Language(s): { getInfo(cty.languages) }</li>
+              <li className="list-group-item">Currency: { getInfo(cty.currencies) }</li>
             </ul>
             <div className="card-body">
                 <div className="card-group">
