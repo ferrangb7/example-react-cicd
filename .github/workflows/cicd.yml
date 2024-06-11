@@ -7,12 +7,11 @@ on:
   pull_request:
     branches:
       - main
-  workflow_dispatch:
 
 jobs:
   test-build:
     name: Test & Build
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-latest
     steps:
     - name: Checkout code
       uses: actions/checkout@v2
@@ -34,7 +33,7 @@ jobs:
         VITE_APP_PUBLIC_URL: /example-react-cicd/
 
     - name: Uploading build files
-      # if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+      if: github.event_name == 'push' && github.ref == 'refs/heads/main'
       uses: actions/upload-artifact@v2
       with:
         name: artifact
@@ -43,8 +42,8 @@ jobs:
   deploy:
     name: Deploy
     needs: test-build
-    runs-on: ubuntu-22.04
-    # if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
     permissions:
       contents: write
 
