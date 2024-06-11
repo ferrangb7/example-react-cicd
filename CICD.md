@@ -83,3 +83,9 @@ steps:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: <artifact_path>
 ```
+### Github-pages requirements
+* Repository must be public
+* Enable github pages in settings
+* Update “homepage” in packages.json with the URL of your github pages site
+* Add VITE_APP_PUBLIC_URL env var with the repository name in the build step.
+* Update <BrowserRouter> basename prop in main.jsx with the repository name.
