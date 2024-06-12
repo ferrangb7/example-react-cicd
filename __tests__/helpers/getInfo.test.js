@@ -11,11 +11,11 @@ in the TODO).
 4. Run the test and see if it passes. If not, try and figure out why.
 You might have forgotten a step. See the sum.test.js and figure out the missing piece.
 */
+import { getInfo } from "../../src/helpers/getInfo";
 
-test('REPLACE_ME', () => {
-    expect("REPLACE_ME").toBe("REPLACE_ME");
+test("Should return none when value is null", () => {
+  expect(getInfo(null)).toBe("none");
 });
-
 
 //TODO: write a test that checks that the names are joining correctly
 /*
@@ -30,8 +30,9 @@ test('REPLACE_ME', () => {
   6. For extra work, try and write another test for both cases, if there is a 'name' in the object, and one without.
 */
 
-test('REPLACE_ME', () => {
-    expect("REPLACE_ME").toBe("REPLACE_ME");
+test("Should return correct names for countries", () => {
+  var myCountry = ["Spanish", "Catalan", "Basque", "Galician"];
+  expect(getInfo(myCountry)).toBe("Spanish, Catalan, Basque, Galician");
 });
 
 /*
@@ -48,4 +49,3 @@ Array(2) [ {…}, {…} ]
 - .map goes over each value in the list and applies a change to it, based on a condition.
 - 'languages' doesn't contain a key called 'name', but 'currencies' does.
 */
-
