@@ -1,7 +1,7 @@
 /*
 2. This test suite is building up on the unit tests you learned from sum.test.js
 
-TODO: write a test that checks that the expected value (specify what this is) is returned when we pass null in
+TO DO: write a test that checks that the expected value (specify what this is) is returned when we pass null in
 
 1. Have a look at the helper function getInfo and try and understand
 what it is doing. Have a look at where it is used.
@@ -12,12 +12,13 @@ in the TODO).
 You might have forgotten a step. See the sum.test.js and figure out the missing piece.
 */
 
-test('REPLACE_ME', () => {
-    expect("REPLACE_ME").toBe("REPLACE_ME");
+import { getInfo } from '../../src/helpers/getInfo';
+
+test('passing null in returns "none"', () => {
+  expect(getInfo(null)).toBe('none');
 });
 
-
-//TODO: write a test that checks that the names are joining correctly
+//TO DO: write a test that checks that the names are joining correctly
 /*
 1. Have a look at the helper function getInfo and try and understand what it is doing.
   Have a look at where it is used. (Spain is a good country to check for this.)
@@ -27,13 +28,45 @@ test('REPLACE_ME', () => {
   3. In the line before the assertion and expectation, write a mock object, something like from the API.
   4. Write an appropriate assertion and expectation, passing in your mock object.
   5. Run the tests. If it fails, try and figure out why.
+  // TO DO
   6. For extra work, try and write another test for both cases, if there is a 'name' in the object, and one without.
 */
 
-test('REPLACE_ME', () => {
-    expect("REPLACE_ME").toBe("REPLACE_ME");
+// 1. Description - 2. Assertion - 3. Expectation
+test('passing mockObject returns an array of the values of the object, separated by commas.', () => {
+  const mockObject = [
+    {
+      languages: {
+        spa: 'Spanish',
+        cat: 'Catalan',
+        eus: 'Basque',
+        glc: 'Galician',
+      },
+    },
+  ];
+
+  expect(getInfo(mockObject[0].languages)).toBe(
+    'Spanish, Catalan, Basque, Galician'
+  );
 });
 
+//  6. For extra work, try and write another test for both cases, if there is a 'name' in the object, and one without.
+
+// REVIEW
+// test('passing mockObject returns an array of the values of the object, separated by commas.', () => {
+//   const mockObject2 = [
+//     {
+//       currencies: {
+//         EUR: {
+//           name: 'Euro',
+//           symbol: '€',
+//         },
+//       },
+//     },
+//   ];
+
+//   expect(getInfo(mockObject2[0].currencies)).toBe('Euro, €');
+// });
 /*
 More information can be found here: https://jestjs.io/docs/getting-started
 You might want to have a go at using some of Jest's other matchers: https://jestjs.io/docs/expect
@@ -48,4 +81,3 @@ Array(2) [ {…}, {…} ]
 - .map goes over each value in the list and applies a change to it, based on a condition.
 - 'languages' doesn't contain a key called 'name', but 'currencies' does.
 */
-
