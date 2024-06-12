@@ -1,3 +1,5 @@
+import { getInfo } from "../../src/helpers/getInfo";
+
 /*
 2. This test suite is building up on the unit tests you learned from sum.test.js
 
@@ -11,9 +13,17 @@ in the TODO).
 4. Run the test and see if it passes. If not, try and figure out why.
 You might have forgotten a step. See the sum.test.js and figure out the missing piece.
 */
+var languages =  {
+            "spa": "Spanish",
+            "cat": "Catalan",
+            "eus": "Basque",
+            "glc": "Galician"
+        }
 
-test('REPLACE_ME', () => {
-    expect("REPLACE_ME").toBe("REPLACE_ME");
+     
+
+test("return none when pass null", () => {
+  expect(getInfo(null)).toBe("none");
 });
 
 
@@ -30,8 +40,17 @@ test('REPLACE_ME', () => {
   6. For extra work, try and write another test for both cases, if there is a 'name' in the object, and one without.
 */
 
-test('REPLACE_ME', () => {
-    expect("REPLACE_ME").toBe("REPLACE_ME");
+test("return languages with ,", () => {
+  expect(getInfo(languages)).toBe("Spanish, Catalan, Basque, Galician");
+});
+
+var currencies = {currencies : {
+  name: "Euro",
+  symbol: "€",
+}};   
+
+test("return currencies", () => {
+  expect(getInfo(currencies)).toBe("Euro");
 });
 
 /*

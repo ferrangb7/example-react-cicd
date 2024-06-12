@@ -12,7 +12,7 @@ on:
 jobs:
   test-build:
     name: Test & Build
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-latest
     steps:
     - name: Checkout code
       uses: actions/checkout@v2
@@ -21,6 +21,37 @@ jobs:
       with:
         node-version: 16.x
     - name: Install dependencies
-      run: npm ci 
+      run: npm ci
+    - name: Runing the test
+      run: npm run test
+    - name: Runing the build
+      run: npm run build
+      env: 
+        VITE_APP_PUBLIC_URL: /example-react-cicd2/
+    - name: Uploading build files
+      if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+      uses: actions/upload-artifact@v2
+      with:
+        name: artifact
+        path: ./dist
+  deploy:
+    name: Deploy
+    runs-on: ubuntu-latest
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    needs: test-build
+    permissions:
+      contents: write
+    steps:
+    - name: Downloading artifact
+      uses: actions/download-artifact@v2
+      with:
+        name: artifact
+        path: ./dist
+    - name: Deploying to gh-pages
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./dist
+        
 
     # TODO: Complete the steps in CICD.md

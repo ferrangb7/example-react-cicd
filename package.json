@@ -35,7 +35,7 @@
     "babel-plugin-transform-vite-meta-env": "^1.0.3",
     "vite": "^4.1.0"
   },
-  "homepage": "https://ferrangb7.github.io/example-react-cicd/",
+  "homepage": "https://IrynaSyvashchenko.github.io/example-react-cicd2/",
   "jest": {
     "testEnvironment": "jsdom",
     "moduleNameMapper": {

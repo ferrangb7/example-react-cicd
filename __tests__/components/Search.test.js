@@ -11,6 +11,13 @@ to make sure that nothing gets moved around or changed unexpectedly.
 //TODO: write a snapshot test that checks that the Search.js component actually renders, then change something to see the test fail
 //Look at this doc to help you write the test: https://jestjs.io/docs/snapshot-testing
 
-test('REPLACE_ME', () => {
-    expect("REPLACE_ME").toBe("REPLACE_ME");
+test("renders correctly", () => {
+  const tree = renderer.create(<Search />).toJSON();
+  expect(tree).toMatchSnapshot();
 });
+
+// test("renders correctly", () => {
+//   const tree = renderer.create(<Search />).toJSON();
+//   expect(tree).toMatchSnapshot();
+// });
+
