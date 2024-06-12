@@ -7,8 +7,8 @@ import CheckboxWithLabel from "./CheckboxWithLabel";
 
 export const Search = () => {
 
-    const [ countries, setCountries ] = useState([]);
-    const [ inputValue, setInputValue ] = useState("");
+    const [countries, setCountries] = useState([]);
+    const [inputValue, setInputValue] = useState("");
 
     const onInputChange = (e) => {
         e.preventDefault();
@@ -20,25 +20,25 @@ export const Search = () => {
         const data = await getCountryByName(inputValue);
         setCountries(data);
         setInputValue('');
-        data.forEach( async cty => {
-            await newReliclogs(`Country Searched: ${ cty.name.common }`);
+        data.forEach(async cty => {
+            await newReliclogs(`Country Searched: ${cty.name.common}`);
         });
-    };    
+    };
 
-    return(
+    return (
         <>
             <div className="row search">
                 <div className="col-3">
                     <h4>Searching</h4>
                     <hr />
-                    <form onSubmit={ onSearchSubmit } aria-label="form">
+                    <form onSubmit={onSearchSubmit} aria-label="form">
                         <input
                             type="text"
                             placeholder="Search a country"
                             className="form-control"
                             autoComplete="off"
-                            value={ inputValue }
-                            onChange={ onInputChange }
+                            value={inputValue}
+                            onChange={onInputChange}
 
                         />
                         <button className="btn btn-outline-primary mt-2">
@@ -52,7 +52,7 @@ export const Search = () => {
                     <hr />
                     {
                         countries ? countries.map(cty => (
-                            <CountryCard key={ cty.population } cty={ cty } />
+                            <CountryCard key={cty.population} cty={cty} />
                         )) : <Error />
                     }
 
@@ -62,3 +62,5 @@ export const Search = () => {
         </>
     )
 }
+
+

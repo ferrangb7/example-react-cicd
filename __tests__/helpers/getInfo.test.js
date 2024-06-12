@@ -1,4 +1,7 @@
+import { getInfo } from "../../src/helpers/getInfo";
+
 /*
+
 2. This test suite is building up on the unit tests you learned from sum.test.js
 
 TODO: write a test that checks that the expected value (specify what this is) is returned when we pass null in
@@ -12,8 +15,10 @@ in the TODO).
 You might have forgotten a step. See the sum.test.js and figure out the missing piece.
 */
 
-test('REPLACE_ME', () => {
-    expect("REPLACE_ME").toBe("REPLACE_ME");
+
+
+test('I want to get the object of getinfo that would be none', () => {
+  expect(getInfo(null)).toBe("none");
 });
 
 
@@ -29,9 +34,19 @@ test('REPLACE_ME', () => {
   5. Run the tests. If it fails, try and figure out why.
   6. For extra work, try and write another test for both cases, if there is a 'name' in the object, and one without.
 */
+const country = { name: "spain" };
+const languages = {
+  "spa": "Spanish",
+  "cat": "Catalan",
+  "eus": "Basque",
+  "glc": "Galician"
+}
+test('getinfo object that would be spain', () => {
+  expect(getInfo(country)).toBe("spain");
+});
 
-test('REPLACE_ME', () => {
-    expect("REPLACE_ME").toBe("REPLACE_ME");
+test('getinfo object that would check the languages', () => {
+  expect(getInfo(languages)).toBe("Spanish, Catalan, Basque, Galician");
 });
 
 /*

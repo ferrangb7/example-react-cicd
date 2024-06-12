@@ -12,7 +12,7 @@ on:
 jobs:
   test-build:
     name: Test & Build
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-latest
     steps:
     - name: Checkout code
       uses: actions/checkout@v2
@@ -22,5 +22,10 @@ jobs:
         node-version: 16.x
     - name: Install dependencies
       run: npm ci 
-
+    - name: Run test 
+      run: npm run test 
+    - name: Build step
+      run: npm run build 
+      env:
+        VITE_APP_PUBLIC_URL: ${{github.repository}}
     # TODO: Complete the steps in CICD.md

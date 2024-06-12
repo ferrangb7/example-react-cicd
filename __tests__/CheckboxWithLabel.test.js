@@ -1,4 +1,4 @@
-import {cleanup, fireEvent, render} from '@testing-library/react';
+import { cleanup, fireEvent, render } from '@testing-library/react';
 import CheckboxWithLabel from '../src/components/CheckboxWithLabel';
 
 /*
@@ -16,7 +16,19 @@ afterEach(cleanup);
  You need to render the component: https://testing-library.com/docs/react-testing-library/api/#render
  You'll need to virtually click on the checkbox: https://testing-library.com/docs/dom-testing-library/api-events/#fireevent
 */
-test('REPLACE_ME', () => {
+test('CheckboxWithLabel changes the label after each click', () => {
+  const { getByLabelText } = render(<CheckboxWithLabel labelOn="On" labelOff="Off" />);
+  const checkbox = getByLabelText(/Off/i);
+  expect(checkbox.checked).toBe(false);
+
+  fireEvent.click(checkbox);
+  expect(checkbox.checked).toBe(true);
+  expect(getByLabelText(/On/i)).toBeTruthy();
+
+  fireEvent.click(checkbox);
+
+  expect(checkbox.checked).toBe(false);
+  expect(getByLabelText(/Off/i)).toBeTruthy();
   // 1. Arrange: render checkbox and store the component as a var, so you can refer to it later.
 
   // 2. Assert: check that checkbox is initially off. You can do something like 'checkbox.checked' to check its value
