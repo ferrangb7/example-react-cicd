@@ -33,9 +33,10 @@ jobs:
     name: Artifacts
     needs: test-build
     if: github.event_name == 'push' && github.ref == 'refs/heads/main'
-      steps:
-        - name: Uploading build files
-          uses: actions/upload-artifact@v2
-          with:
-            name: artifact
-            path: ./dist
+    runs-on: ubuntu-latest
+    steps:
+      - name: Uploading build files
+        uses: actions/upload-artifact@v2
+        with:
+          name: artifact
+          path: ./dist
