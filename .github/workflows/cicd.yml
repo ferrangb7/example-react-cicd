@@ -29,5 +29,13 @@ jobs:
         env:
           VITE_APP_PUBLIC_URL: /example-react-cicd/ # --> /example-react-cicd/
 
-
-    # TODO: Complete the steps in CICD.md
+  push-artifacts:
+    name: Artifacts
+    needs: test-build
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+      steps:
+        - name: Uploading build files
+          uses: actions/upload-artifact@v2
+          with:
+            name: artifact
+            path: ./dist
